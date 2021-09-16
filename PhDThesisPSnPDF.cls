@@ -281,7 +281,7 @@ supported!}
   \graphicspath{{Figs/Raster/}{Figs/}}
 \else
   \RequirePackage{graphicx}
-  \DeclareGraphicsExtensions{.eps, .ps}
+  \DeclareGraphicsExtensions{.png, .jpg, .pdf, .eps, .ps}
   \graphicspath{{Figs/Vector/}{Figs/}}
 \fi
 
@@ -874,7 +874,8 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{This dissertation is submitted for the degree of }
+%\newcommand{\submissiontext}{This dissertation is submitted for the degree of }
+\newcommand{\submissiontext}{\textit{A Thesis Submitted \\ In Partial Fulfilment of the Requirements for the Degree \\ of}}
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
@@ -944,19 +945,19 @@ wish to left align your text}
 % Title
 {\usebox{\PHD@Title}} % subtitle is defined
 
-
+% Submission Text
+\vspace{.15\PHD@titlepagespacing}
+{\usebox{\PHD@submission}}
 % Crest
-
 \ifPHD@collegeshield%
-	\vspace{.15\PHD@titlepagespacing}
-	{\usebox{\PHD@collegecrest}}
-	\vspace{.1\PHD@titlepagespacing}
+\vspace{.15\PHD@titlepagespacing}
+{\usebox{\PHD@collegecrest}}
+\vspace{.1\PHD@titlepagespacing}
 \else
-	\vspace{.25\PHD@titlepagespacing}
-	{\usebox{\PHD@crest}}
-	\vspace{.15\PHD@titlepagespacing}
+\vspace{.1\PHD@titlepagespacing}
+{\usebox{\PHD@crest}}
+\vspace{.1\PHD@titlepagespacing}
 \fi
-
 
 
 % Author
@@ -977,15 +978,15 @@ wish to left align your text}
 
 % Department and University
 {\usebox{\PHD@dept}}
-\vspace{.2\PHD@titlepagespacing}
-
-% Submission Text
-{\usebox{\PHD@submission}}
+\vspace{.05\PHD@titlepagespacing}
 
 % College and degree date
-\vfill
 {\usebox{\PHD@collegedate}}
-    
+
+% Author Copyright
+\vfill
+\vspace{.1\PHD@titlepagespacing}
+\copyright~\the\year~ \@author.  All rights reserved.    
 \end{center}
 
 \end{singlespace}
@@ -1178,7 +1179,7 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
-    \centering \Large \bfseries{\@author}
+    \centering \large \textit{Submitted by} \\ \Large \bfseries {\@author}
       \vspace{0.5em}   
   \end{minipage}
 \end{lrbox}
@@ -1191,10 +1192,7 @@ wish to left align your text}
       % supervisor is not defined
     }{
       \begin{center}
-        \makebox[\widthof{supervisorrole} + \@supervisorlinewidth][c]{
-          \Large
-          \@supervisorrole \parbox[t]{\@supervisorlinewidth}{\@supervisor}
-        }
+        \large \textit{Under the Supervision of} \\ \Large \bfseries {\@supervisor}   
       \end{center}
       \vspace{0.5em}
     } % supervisor is defined
@@ -1223,8 +1221,8 @@ wish to left align your text}
 \newsavebox{\PHD@dept}
 \begin{lrbox}{\PHD@dept}
   \begin{minipage}[c]{\textwidth}
-    \centering {\large \@dept \par}
-	       {\large \@university \par}
+    \centering {\large \textit{to the} \vspace{1.0em} \\ \normalsize \bfseries \@dept \par}
+    {\bfseries \@university \par}
   \end{minipage}
 \end{lrbox}
 
@@ -1233,8 +1231,10 @@ wish to left align your text}
 \begin{lrbox}{\PHD@submission}
   \begin{minipage}[c]{\textwidth}
     \begin{center}
-      \large \submissiontext \par
-      \large \textit {\@degreetitle} \par
+      \vspace{0.5 cm}
+   	  \large \submissiontext \par
+	  \Large \textbf {\@degreetitle} \par
+	  \vspace{0.5 cm}
     \end{center}
   \end{minipage}
 \end{lrbox}
