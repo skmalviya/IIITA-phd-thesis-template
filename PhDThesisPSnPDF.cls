@@ -814,6 +814,19 @@ wish to left align your text}
 % These macros are used to declare arguments needed for the
 % construction of the title page and other preamble.
 
+% Place or location
+\newcommand*{\place}[1]{\def\place{#1}}
+
+% Department Name
+\newcommand*{\deptname}[1]{\def\deptname{#1}}
+
+% College Name
+\newcommand*{\collegename}[1]{\def\collegename{#1}}
+
+% Enrollment No
+\newcommand{\@enroll}{}
+\newcommand{\enroll}[1]{\renewcommand{\@enroll}{#1}}
+
 % Subtitle (optional)
 \newcommand{\@subtitle}{}
 \newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
@@ -889,6 +902,9 @@ wish to left align your text}
 
 % Declaration title text
 \newcommand{\@declarationtitle}{Declaration}
+
+% Certificate title text
+\newcommand{\@certificatetitle}{Certificate}
 
 % Acknowledgment title text
 \newcommand{\@acknowledgementstitle}{Acknowledgements}
@@ -1005,6 +1021,19 @@ wish to left align your text}
 \centering
 }
 
+
+% ******************************* Certificate **********************************
+% The certificate environment puts a large, bold, centered
+% "Certificate" label at the top of the page.
+
+\newenvironment{certificate}
+{
+	\cleardoublepage
+	\setsinglecolumn
+	\TransparentBackground
+	\CustomizedHeader
+	\thispagestyle{empty}
+}
 
 
 % ******************************* Declaration **********************************
@@ -1145,6 +1174,23 @@ wish to left align your text}
 
 \newcommand{\computeTitlePageSpacing}{
 
+% Customized Header and Background Transparent Logo
+\newcommand\TransparentBackground{
+	\begin{tikzpicture}[remember picture, overlay]
+	\node[opacity=0.2] at (current page.center)
+	{\includegraphics[width=15cm]{iiita_logo_transparant.png}};
+	\end{tikzpicture}
+}
+
+\newcommand\CustomizedHeader{
+	\begin{center}
+		\begin{tabular}{V{3} m{2.5cm} V{3} c V{3}}
+			\specialrule{.1em}{0em}{0em} 
+			\includegraphics[width=0.17\textwidth]{iiita_logo_transparant.png} & \begin{tabular}[x]{@{}c@{}} \bfseries INDIAN INSTITUTE OF INFORMATION TECHNOLOGY \\ \bfseries ALLAHABAD \\ \small \textit{(A Centre of Excellence in Information Technology Established by Govt. of India)}\end{tabular} \\ 
+			\specialrule{.1em}{0em}{0em} 
+		\end{tabular}
+	\end{center}
+}
 
 % Title Box
 \newsavebox{\PHD@Title}

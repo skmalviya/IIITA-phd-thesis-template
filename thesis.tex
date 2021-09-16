@@ -111,8 +111,17 @@
 
 \frontmatter
 
+\makeatletter
+\let\ttitle\@title
+\let\authorname\@author
+\let\supervisorname\@supervisor
+\let\tdate\@date
+\let\enrollno\@enroll
+\makeatother
+
 \maketitle
 
+\include{Certificate/certificate}
 \include{Dedication/dedication}
 \include{Declaration/declaration}
 \include{Acknowledgement/acknowledgement}
