@@ -1041,16 +1041,18 @@ wish to left align your text}
 % "Declaration" label at the top of the page.
 
 \newenvironment{declaration}{
-\cleardoublepage
-\setsinglecolumn
-\chapter*{\centering \Large \@declarationtitle}
-\thispagestyle{empty}
-}{
-\flushright
-\@author{}\\
-\@degreedate{}
-\vfill
-}
+	\cleardoublepage
+	\setsinglecolumn
+	\TransparentBackground
+	\CustomizedHeader
+	%\chapter*{\centering \Large \@declarationtitle}
+	\thispagestyle{empty}
+}%{
+%\flushright
+%\@author{}\\
+%\@degreedate{}
+%\vfill
+%}
 
 
 
