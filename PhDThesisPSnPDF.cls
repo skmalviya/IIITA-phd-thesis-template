@@ -906,6 +906,9 @@ wish to left align your text}
 % Certificate title text
 \newcommand{\@certificatetitle}{Certificate}
 
+% Thesis-to-nation title text
+\newcommand{\@ThesisToNation}{ThesisToNation}
+
 % Acknowledgment title text
 \newcommand{\@acknowledgementstitle}{Acknowledgements}
 
@@ -1035,6 +1038,19 @@ wish to left align your text}
 	\thispagestyle{empty}
 }
 
+% ******************************* ThesisToNation **********************************
+% The ThesisToNation environment puts a large, bold, centered
+% "ThesisToNation" label at the top of the page.
+
+\newenvironment{ThesisToNation}{
+	\cleardoublepage
+	\setsinglecolumn
+	%\TransparentBackground
+	%\CustomizedHeader
+	%\chapter*{\centering \Large \@certificatetitle}
+	\chapter*{ }
+	\thispagestyle{empty}
+}
 
 % ******************************* Declaration **********************************
 % The declaration environment puts a large, bold, centered
