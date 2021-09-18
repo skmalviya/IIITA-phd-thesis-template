@@ -125,9 +125,10 @@
 \include{Declaration/declaration}
 \include{ThesisToNation/ThesisToNation}
 \includepdf[page={1-2}]{plagiarism-report/plagiarism-report}
-\include{Dedication/dedication}
-\include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
+\include{Acknowledgement/acknowledgement}
+\include{Dedication/dedication}
+
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -137,10 +138,23 @@
 
 \listoftables
 
-% \printnomenclature[space] space can be set as 2em between symbol and description
-%\printnomenclature[3em]
+% *********************** How to make sections in Nomenclature as "List of Symbols"? ***********************
+% https://tex.stackexchange.com/questions/223376/how-to-make-section-in-nomenclature
 
-\printnomenclature
+% ########### Comment below 8 lines, if you dont require Sections in Nomenclature ###########
+\renewcommand{\nomgroup}[1]{%
+	\ifthenelse{\equal{#1}{A}}{\item[\textbf{Topic 1}]}{
+	\ifthenelse{\equal{#1}{B}}{\item[\textbf{Topic 2}]}{
+	\ifthenelse{\equal{#1}{C}}{\item[\textbf{Topic 3}]}{
+}
+}
+}
+}
+
+% \printnomenclature[space] space can be set as 2em between symbol and description
+\printnomenclature[3em]
+
+%\printnomenclature
 
 % ******************************** Main Matter *********************************
 \mainmatter
