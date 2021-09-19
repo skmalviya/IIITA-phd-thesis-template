@@ -2,6 +2,11 @@ IIITA PhD thesis template
 ========================
 > A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for Indian Institute of Information Technology, Allahabad adapted from CUED PhD thesis template.
 
+## Sequence of commands to run all features, e.g. Index, Nomenclature, Glossary (Already present in the Tex editors, e.g. TexMaker, TexStudio):
+  ```
+  bibtex >> MakeIndex >> Makenomenclature >> Makeglossaries >> XeLaTeX
+  ```
+
 ## Modifications on the original Template
 
 1. [Created front page with IIITA logo.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/67bbecb7c48d81be059a938e42c71911f1a40d50)
@@ -9,14 +14,26 @@ IIITA PhD thesis template
 3. [Updated & added Declaration page with IIITA-format.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/15357b9cd2121fc938c461fd28539ea92514163b)
 4. [Added 'Dedication-to-the-nation' page.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/38628d567d2780d51cefcb8f2213fb03f2ee7bae)
 5. [Added plagiarism-report pages.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/92aec978aa53c606397dc074324f1af0f38fc67f)
-  * A two page plagiarism report is obtained from [Turnitin](https://turnitin.com/do_login.asp)
-6. [Updated nomenclature as 'List of Symbols'.]()
-  * Command to update Nomenclature (List of Symbols):
-    ```
-    makeindex %.nlo -s nomencl.ist -t %.nlg -o %.nls %.nlo
-    ```
-    You can add this into the list of user commands. Run this command, everytime the nomenclature is updated in the thesis.
+    * A two page plagiarism report is obtained from [Turnitin](https://turnitin.com/do_login.asp)
+6. [Updated nomenclature as 'List of Symbols'.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/68b29071afa7498841448cf0732f73997f8b4835)
+    * Sequence of Commands to update Nomenclature (List of Symbols):
+      ```
+      makenomenclature >> xelatex
+      ```
 
+    * makenomenclature (You can add this into the list of user commands manually. Run this command, everytime the nomenclature is updated in the thesis):
+      ```
+      makeindex %.nlo -s nomencl.ist -t %.nlg -o %.nls %.nlo
+      ```
+7. [Added Acronyms in the thesis.]()
+    * Sequence of Commands to update Acronyms:
+      ```
+      makeglossaries >> xelatex
+      ```
+    * makeglossaries (It is already present in the Tex editors, e.g. TexMaker, TexStudio):
+      ```
+      makeglossaries %
+      ```
 
 CUED PhD thesis template
 ========================

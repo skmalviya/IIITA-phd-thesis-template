@@ -28,8 +28,12 @@
 \DeclareOption{print}{\@printtrue}
 
 % ****************************** Define index **********************************
+%	************ (Updated by me) ************
+%	'index' changed to 'withindex' for avoiding the conflict with imported "glossary" package.
+%	https://github.com/cambridge/thesis/pull/15
 \newif\ifPHD@index\PHD@indexfalse
-\DeclareOption{index}{\PHD@indextrue}
+\DeclareOption{withindex}{\PHD@indextrue}
+
 
 % ******************************* Font Option **********************************
 \newif\ifsetFont\setFontfalse                 % Font is not set
@@ -1339,4 +1343,3 @@ wish to left align your text}
 			- \totalheightof{\usebox{\PHD@collegedate}}
 }
 }
-

@@ -1,7 +1,11 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,numbered,print,withindex]{PhDThesisPSnPDF}
+
+%************************************** (Changed by me) *************************************
+% 1. 'index' changed to 'withindex' for avoiding the conflict with imported "glossary" package.
+%	  https://github.com/cambridge/thesis/pull/15
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -86,6 +90,10 @@
 % Thesis title and author information, refernce file for biblatex
 \input{thesis-info}
 
+% ********************************** Acronym ***********************************
+% Acronym: Contains all the acronym used in the thesis
+\input{Acronym/Acronym}
+
 % ***************************** Abstract Separate ******************************
 % To printout only the titlepage and the abstract with the PhD title and the
 % author name for submission to the Student Registry, use the `abstract' option in
@@ -167,7 +175,8 @@
 %\include{Chapter6/chapter6}
 %\include{Chapter7/chapter7}
 
-
+\printglossary[type=\acronymtype]
+\addcontentsline{toc}{chapter}{\acronymname} % ## This line add 'Acronyms' in the TOC
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
