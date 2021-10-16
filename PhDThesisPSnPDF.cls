@@ -603,7 +603,7 @@ supported!}
 % Moved below other usepackage definitions to fix PDFLaTeX footnote warning
 % Based on the suggestion by John Plaice
 
-\RequirePackage[unicode=true]{hyperref}
+\RequirePackage[unicode=true,backref=page]{hyperref}
 
 \if@print
   % For Print version
@@ -618,10 +618,11 @@ supported!}
     breaklinks=true,
     linktocpage,
     colorlinks=true,
-    linkcolor=black,
-    urlcolor=black,
-    citecolor=black,
-    anchorcolor=black
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=red,
+    anchorcolor=blue,
+    backref=page,
   }
   \ifsetCustomMargin
   % Margin to be define in preamble using geometry package

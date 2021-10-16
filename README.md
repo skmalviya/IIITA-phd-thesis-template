@@ -39,7 +39,7 @@ IIITA PhD thesis template
     * Resolved the error: "! LaTeX3 Error: The key 'polyglossia/gujarati/hyphenmins' requires a value." due to uavailability of "gloss-gujarati.ldf" file in directory: /usr/share/texlive/texmf-dist/tex/latex/polyglossia:
     * Created a dummy file named [gloss-gujarati.ldf](./gloss-gujarati.ldf) based on the gloss-telugu.ldf and paste either in the current directory of concern or in /usr/share/texlive/texmf-dist/tex/latex/polyglossia.
 
-9. [Set Formatting as per IIITA Thesis Guideline.]()
+9. [Set Formatting as per IIITA Thesis Guideline.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/fe50f5496353f4d2edec1213755e341c0df8e59d)
     * [IIITA Thesis Guideline.](https://www.iiita.ac.in/uploads/spgc/24_thesispreparationguidefinalIIITA.pdf) The following parameters are set in [preamble.tex](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/Preamble/preamble.tex):
       * Font size = 11pt
       * Spacing = doublespacing
@@ -47,6 +47,38 @@ IIITA PhD thesis template
     * For Print or Online version, set the **bindingoffset** value in [preamble.tex](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/Preamble/preamble.tex) @Line-11 as below:
       * For print version  : bindingoffset = 0mm
       * For online version : set bindingoffset = -10mm
+
+10. [Adding Reference Conventions in the thesis.]()
+    * Rename the **Bibliography** with **References** by updating [thesis.tex](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/thesis.tex) with @Line no-199:
+      ```
+      \renewcommand{\bibname}{References}
+      \bibliography{References/references}
+      ```
+    * **Coloring** the citations & links as well as enabling **back-referencing** by updating [PhDThesisPSnPDF.cls](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/PhDThesisPSnPDF.cls) as below @Line no-606:
+      ```
+      \RequirePackage[unicode=true,backref=page]{hyperref}
+      \if@print
+        % For Print version
+        \hypersetup{
+          final=true,
+          plainpages=false,
+          pdfstartview=FitV,
+          pdftoolbar=true,
+          pdfmenubar=true,
+          bookmarksopen=true,
+          bookmarksnumbered=true,
+          breaklinks=true,
+          linktocpage,
+          colorlinks=true,
+          linkcolor=blue,
+          urlcolor=blue,
+          citecolor=red,
+          anchorcolor=blue,
+          backref=page,
+        .
+        .
+        .
+      ```
 
 
 CUED PhD thesis template
