@@ -25,7 +25,7 @@ IIITA PhD thesis template
       ```
       makeindex %.nlo -s nomencl.ist -t %.nlg -o %.nls %.nlo
       ```
-7. [Added Acronyms in the thesis.]()
+7. [Added Acronyms in the thesis.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/a6839b49a755dbd679084d30060d2cdcfccc21cd)
     * Sequence of Commands to update Acronyms:
       ```
       makeglossaries >> xelatex
@@ -34,6 +34,11 @@ IIITA PhD thesis template
       ```
       makeglossaries %
       ```
+8. [Added Indic languages support in the thesis.]()
+    * Added the support for Hindi, Bengali, Gujarati, Telugu, Tamil.
+    * Resolved the error: "! LaTeX3 Error: The key 'polyglossia/gujarati/hyphenmins' requires a value." due to uavailability of "gloss-gujarati.ldf" file in directory: /usr/share/texlive/texmf-dist/tex/latex/polyglossia:
+    * Created a dummy file named [gloss-gujarati.ldf](./gloss-gujarati.ldf) based on the gloss-telugu.ldf and paste either in the current directory of concern or in /usr/share/texlive/texmf-dist/tex/latex/polyglossia.
+
 
 CUED PhD thesis template
 ========================

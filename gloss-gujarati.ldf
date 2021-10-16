@@ -1,0 +1,66 @@
+\ProvidesFile{gloss-gujarati.ldf}[polyglossia: module for gujarati]
+\ifluatex
+  \xpg@warning{gujarati is not supported with LuaTeX.\MessageBreak
+I will proceed with the compilation, but\MessageBreak
+the output is not guaranteed to be correct\MessageBreak
+and may look very wrong.}
+\fi
+% Translations provided by Anmol Sharma <unmole.in@gmail.com>
+
+\PolyglossiaSetup{gujarati}{
+  bcp47=gu,
+  script=gujarati,
+  scripttag=gujr,
+  langtag=GUJ,
+  hyphennames={gujarati},
+  hyphenmins={2,2}, %FIXME
+  fontsetup=true,
+}
+
+% BCP-47 compliant aliases
+\setlanguagealias*{gujarati}{gu}
+
+\def\captionsgujarati{%
+   \def\refname{ఆధారాలు}%
+   \def\abstractname{సారాంశం}%
+   \def\bibname{గ్రంథాల జాబితా}%
+   \def\prefacename{ముందుమాట}%
+   \def\chaptername{అధ్యాయము}%
+   \def\appendixname{అదనంగా}%
+   \def\contentsname{విషయాలు}%
+   \def\listfigurename{ఆకృతుల జాబితా}%
+   \def\listtablename{పట్టికల జాబితా}%
+   \def\indexname{విషయ సూచిక}%
+   \def\figurename{ఆకృతి}%
+   \def\tablename{పట్టిక}%
+   %\def\thepart{}%
+   \def\partname{భాగం}%
+   \def\pagename{పేజి}%
+   \def\seename{చూడండి}%
+   \def\alsoname{కూడా చూడండి}%
+   \def\enclname{ఎంక్లోజర్*}%
+   \def\ccname{సిసి}%
+   \def\headtoname{కి}%
+   \def\proofname{రుజువు}%
+   \def\glossaryname{నిఘంటువు}%
+}
+
+\def\dategujarati{%
+   \def\gujarati@month{%
+      \ifcase\month\or
+         జనవరి\or
+         ఫిబ్రవరి\or
+         మార్చ్\or
+         ఏప్రిల్\or
+         మే\or
+         జూన్\or
+         జూలై\or
+         ఆగస్ట్\or
+         సెప్టెంబర్\or
+         అక్తోబెర్\or
+         నవంబర్\or
+         డిసంబర్\fi}%
+   \def\today{\gujarati@month\space\number\day,\space\number\year}%
+}
+
+\endinput
