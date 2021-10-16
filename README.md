@@ -34,10 +34,19 @@ IIITA PhD thesis template
       ```
       makeglossaries %
       ```
-8. [Added Indic languages support in the thesis.]()
+8. [Added Indic languages support in the thesis.](https://github.com/skmalviya/IIITA-phd-thesis-template/commit/7330938d79a1222385063c4a73dfa044e5de31fc)
     * Added the support for Hindi, Bengali, Gujarati, Telugu, Tamil.
     * Resolved the error: "! LaTeX3 Error: The key 'polyglossia/gujarati/hyphenmins' requires a value." due to uavailability of "gloss-gujarati.ldf" file in directory: /usr/share/texlive/texmf-dist/tex/latex/polyglossia:
     * Created a dummy file named [gloss-gujarati.ldf](./gloss-gujarati.ldf) based on the gloss-telugu.ldf and paste either in the current directory of concern or in /usr/share/texlive/texmf-dist/tex/latex/polyglossia.
+
+9. [Set Formatting as per IIITA Thesis Guideline.]()
+    * [IIITA Thesis Guideline.](https://www.iiita.ac.in/uploads/spgc/24_thesispreparationguidefinalIIITA.pdf) The following parameters are set in [preamble.tex](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/Preamble/preamble.tex):
+      * Font size = 11pt
+      * Spacing = doublespacing
+      * Marging = left=35mm,right=25mm,top=25mm,bottom=25mm
+    * For Print or Online version, set the **bindingoffset** value in [preamble.tex](https://github.com/skmalviya/IIITA-phd-thesis-template/blob/master/Preamble/preamble.tex) @Line-11 as below:
+      * For print version  : bindingoffset = 0mm
+      * For online version : set bindingoffset = -10mm
 
 
 CUED PhD thesis template

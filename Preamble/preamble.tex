@@ -1,11 +1,14 @@
-% ******************************************************************************
-% ****************************** Custom Margin *********************************
+% ***************************************************************************************
+% ******************** Custom Margin (As PER IIITA Thesis Guideline) ********************
 
 % Add `custommargin' in the document class options to use this section
 % Set {innerside margin / outerside margin / topmargin / bottom margin}  and
 % other page dimensions
 \ifsetCustomMargin
-  \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+% \RequirePackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
+  % For print version  : bindingoffset = 0mm
+  % For online version : set bindingoffset = -10mm
+  \RequirePackage[left=35mm,right=25mm,top=25mm,bottom=25mm,bindingoffset=0mm]{geometry} 
   \setFancyHdr % To apply fancy header after geometry package is loaded
 \fi
 
@@ -92,7 +95,7 @@
 % Choose linespacing as appropriate. Default is one-half line spacing as per the
 % University guidelines
 
-% \doublespacing
+ \doublespacing
 % \onehalfspacing
 % \singlespacing
 
